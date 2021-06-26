@@ -1,7 +1,7 @@
 import React, { useState, FC } from 'react';
 import './home.styles.scss'
 
-import { useStore } from '../../utils/globalStore';
+import { useStore } from '../../../utils/globalStore';
 
 import Menu from 'react-burger-menu/lib/menus/slide';
 import Header from '../header/Header.component';

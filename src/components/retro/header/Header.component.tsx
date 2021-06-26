@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import './header.styles.scss';
 
-import { useStore } from '../../utils/globalStore';
+import { useStore } from '../../../utils/globalStore';
 
 type HeaderProps = {
   toggleFlyout: () => void
