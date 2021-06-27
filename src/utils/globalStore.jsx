@@ -3,7 +3,8 @@ import React, { createContext, useContext, useReducer } from 'react';
 const StoreContext = createContext();
 
 const initialState = {
-  darkMode: false
+  darkMode: false,
+  retroMode: true
 };
 
 const reducer = (state, action) => {
@@ -12,6 +13,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         darkMode: !state.darkMode
+      }
+    case "toggleRetro":
+      return {
+        ...state,
+        retroMode: !state.retroMode
       }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

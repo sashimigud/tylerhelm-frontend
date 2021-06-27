@@ -1,28 +1,12 @@
 import React from 'react';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
 import { StoreProvider } from './utils/globalStore';
-import Home from './components/retro/home/Home.component';
+import Container from './components/common/container/Container.component';
 
 function App() {
   return (
     <StoreProvider>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/boring">
-            
-          </Route>
-        </Switch>
-      </Router>
+      <Container />
     </StoreProvider>
   );
 }
