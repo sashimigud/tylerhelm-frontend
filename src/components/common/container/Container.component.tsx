@@ -9,12 +9,11 @@ import {
 } from "react-router-dom";
 
 import Home from '../../retro/home/Home.component';
-import RetroSwitch from '../retro-switch/RetroSwitch.component';
+import BoringHome from '../../boring/home/BoringHome.component';
 
 const Container: FC = () => {
   return (
-    <div className="container-container">
-      <RetroSwitch />
+    <div className="container-container"> 
       <Router>
         <Switch>
           <Route exact path="/">
@@ -25,7 +24,7 @@ const Container: FC = () => {
           </Route>
           <Route path="/boring">
             {/* TODO: boring app */}
-            <p>hello boring company</p>
+            <BoringHome />
           </Route>
         </Switch>
       </Router>
