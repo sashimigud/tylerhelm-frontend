@@ -15,15 +15,11 @@ const Header: FC<HeaderProps> = ({ toggleFlyout }: HeaderProps) => {
       <div className="site-controls">
         <img className="logo" src="assets/datamaskin.gif" alt="" />
         <div>
-          <p>Home</p>
-          <p>About</p>
+          <div className="header-link h-l-home"></div>
+          <div className="header-link h-l-about"></div>
         </div>
       </div>
-      <div className="burger-container" onClick={() => toggleFlyout()}>
-        <div className="burger-line"></div>
-        <div className="burger-line"></div>
-        <div className="burger-line"></div>
-      </div>
+      <img className="burger-menu" src="assets/vaporwave_cat.gif" alt="" onClick={() => toggleFlyout()} />
     </div>
   );
 };

@@ -8,7 +8,7 @@ const BoringHeader: FC = () => {
     <div className="b-header-container">
       <div className="site-controls">
         <div className="logo"></div>
-        <div>
+        <div className="links">
           <p>Home</p>
           <p>About</p>
         </div>
