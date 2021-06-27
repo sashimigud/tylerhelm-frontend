@@ -1,4 +1,5 @@
-import React, { useState, FC } from 'react';
+import React, { useState, useEffect, FC } from 'react';
+import { useHistory, useLocation } from "react-router-dom";
 import './home.styles.scss'
 
 import { useStore } from '../../../utils/globalStore';
@@ -8,13 +9,29 @@ import Header from '../header/Header.component';
 import Content from '../home/content/Content.component';
 
 const Home: FC = () => {
-  const [showFlyout, setShowFlyout] = useState<boolean>(false);
   const { state } = useStore();
+  const history = useHistory();
+  const location = useLocation();
+
+  const [showFlyout, setShowFlyout] = useState<boolean>(false);
   //const [apiData, setApiData] = useState();
 
   function onShowFlyout(): void {
     setShowFlyout(!showFlyout);
   }
+
+  useEffect(() => {
+    console.log("useEffect fired")
+    console.log("location: ", location.pathname)
+    if(state.retroMode && location.pathname !== '/retro') {
+      console.log("push til retro")
+      //console.log(location.pathname);
+      history.push('retro')
+    } else if (!state.retroMode && location.pathname !== '/boring') {
+      console.log("push til boring")
+      history.push('boring')
+    }
+  }, [state.retroMode, history, location])
 
   /*useEffect(() => {
     async function fetchImages() {

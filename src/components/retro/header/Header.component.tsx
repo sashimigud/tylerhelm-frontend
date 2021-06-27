@@ -1,15 +1,11 @@
 import React, { FC } from 'react';
 import './header.styles.scss';
 
-//import { useStore } from '../../../utils/globalStore';
-
 type HeaderProps = {
   toggleFlyout: () => void
 }
 
 const Header: FC<HeaderProps> = ({ toggleFlyout }: HeaderProps) => {
-  //const { dispatch } = useStore();
-
   return (
     <div className="header-container">
       <div className="site-controls">

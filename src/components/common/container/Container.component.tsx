@@ -2,9 +2,10 @@ import React, { FC } from 'react';
 import './container.styles.scss';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import Home from '../../retro/home/Home.component';
@@ -17,6 +18,9 @@ const Container: FC = () => {
       <Router>
         <Switch>
           <Route exact path="/">
+            <Redirect to="/retro" />
+          </Route>
+          <Route path="/retro">
             <Home />
           </Route>
           <Route path="/boring">
