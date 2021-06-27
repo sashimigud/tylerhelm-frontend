@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import './header.styles.scss';
 
-import { useStore } from '../../../utils/globalStore';
+//import { useStore } from '../../../utils/globalStore';
 
 type HeaderProps = {
   toggleFlyout: () => void
 }
 
 const Header: FC<HeaderProps> = ({ toggleFlyout }: HeaderProps) => {
-  const { dispatch } = useStore();
+  //const { dispatch } = useStore();
 
   return (
     <div className="header-container">

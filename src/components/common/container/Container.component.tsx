@@ -4,8 +4,7 @@ import './container.styles.scss';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import Home from '../../retro/home/Home.component';
