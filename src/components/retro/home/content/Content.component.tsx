@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import './content.styles.scss'
 
+import Carousel from '../../../common/carousel/Carousel.component';
+
 const Content: FC = () => {
   return (<div className="content-container">
     <div className="content-left">
@@ -11,7 +13,7 @@ const Content: FC = () => {
       <img className="left-img l-img-5" src="assets/smiley.gif" alt="" />
     </div>
     <div className="content-middle">
-      
+      <Carousel />
     </div>
     <div className="content-right">
       <img className="right-img r-img-1" src="assets/sunglasses.gif" alt="" />
