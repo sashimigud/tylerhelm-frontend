@@ -2,7 +2,11 @@ import React, { FC } from "react";
 import "./carousel.styles.scss";
 import { useSpringCarousel } from "react-spring-carousel-js";
 
+import { useStore } from '../../../utils/globalStore';
+
 const Carousel: FC = () => {
+  const { state } = useStore();
+
   const { carouselFragment, thumbsFragment, slideToPrevItem, slideToNextItem, slideToItem } =
     useSpringCarousel({
       //index of item to start with
@@ -31,12 +35,12 @@ const Carousel: FC = () => {
     <div className="carousel-container">
       {/*
     <p>tittel</p>
-    mulig at renderItem kan ha tittel også
+    det er mulig at renderItem kan ha tittel også
     */}
       <div className="carousel-wrapper">
-        <button onClick={slideToNextItem}>next</button>
+        { state.retroMode ? <button onClick={slideToNextItem}>next</button> : <button>normal next</button> }     
         {carouselFragment}
-        <button onClick={slideToPrevItem}>back</button>
+        { state.retroMode ? <button onClick={slideToPrevItem}>back</button> : <button>normal back</button> }
       </div>
       <div className="thumbs-wrapper">
         {thumbsFragment}
