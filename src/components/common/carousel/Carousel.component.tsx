@@ -1,8 +1,10 @@
-import React, { FC } from "react";
-import "./carousel.styles.scss";
-import { useSpringCarousel } from "react-spring-carousel-js";
+import React, { FC } from 'react';
+import './carousel.styles.scss';
+import { useSpringCarousel } from 'react-spring-carousel-js';
 
 import { useStore } from '../../../utils/globalStore';
+
+import CarouselItem from './carousel-item/CarouselItem.component';
 
 const Carousel: FC = () => {
   const { state } = useStore();
@@ -15,7 +17,7 @@ const Carousel: FC = () => {
       items: [
         {
           id: "item-1",
-          renderItem: <div>Item 1</div>,
+          renderItem: <CarouselItem ori={'landscape'} />,
           //slideToItem takes index and id
           renderThumb: (<div onClick={() => slideToItem("item-1")}>
             thumb
@@ -37,11 +39,11 @@ const Carousel: FC = () => {
     <p>tittel</p>
     det er mulig at renderItem kan ha tittel også
     */}
-      <div className="carousel-wrapper">
         { state.retroMode ? <button onClick={slideToNextItem}>next</button> : <button>normal next</button> }     
+      <div className="carousel-wrapper">
         {carouselFragment}
-        { state.retroMode ? <button onClick={slideToPrevItem}>back</button> : <button>normal back</button> }
       </div>
+        { state.retroMode ? <button onClick={slideToPrevItem}>back</button> : <button>normal back</button> }
       <div className="thumbs-wrapper">
         {thumbsFragment}
       </div>
