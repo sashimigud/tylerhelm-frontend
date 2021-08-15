@@ -1,8 +1,13 @@
 .carousel-container {
-  width: 50rem;
   margin-top: 100px;
 
-  .carousel-wrapper {
-    display: flex;
+  .carousel-wrapper-landscape {
+    width: 50rem;
+    height: 35rem;
+  }
+
+  .carousel-wrapper-portrait {
+    width: 50rem;
+    height: 40rem;
   }
 }

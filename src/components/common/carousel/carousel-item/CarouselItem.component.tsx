@@ -2,15 +2,15 @@ import React, { FC } from 'react';
 import './carouselitem.styles.scss';
 
 type carouselItemProps = {
-  ori: string
+  imgsrc
 }
 
-const CarouselItem: FC<carouselItemProps> = ({ ori }: carouselItemProps) => {
+const CarouselItem: FC<carouselItemProps> = ({ imgsrc }: carouselItemProps) => {
 
   return (
     <div className="carousel-item-container">
-      <p>tittellaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaang</p>
-      <div className="carousel-item-img"></div>
+      <p>tittel</p>
+      <img src={imgsrc} alt=""/>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import './carousel.styles.scss';
 import { useSpringCarousel } from 'react-spring-carousel-js';
 
@@ -8,8 +8,20 @@ import CarouselItem from './carousel-item/CarouselItem.component';
 
 const Carousel: FC = () => {
   const { state } = useStore();
+  const [imageOrientation, setImageOrientation] = useState('landscape');
 
-  const { carouselFragment, thumbsFragment, slideToPrevItem, slideToNextItem, slideToItem } =
+  const images = [
+    {
+      src: "test-images/pagliacci-test.jpg",
+      orientation: "landscape"
+    },
+    {
+      src: "test-images/flinkpike-test.png",
+      orientation: "portrait"
+    }
+  ]
+
+  const { carouselFragment, thumbsFragment, useListenToCustomEvent, slideToPrevItem, slideToNextItem, slideToItem } =
     useSpringCarousel({
       //index of item to start with
       initialActiveItem: 1,
@@ -17,7 +29,7 @@ const Carousel: FC = () => {
       items: [
         {
           id: "item-1",
-          renderItem: <CarouselItem ori={'landscape'} />,
+          renderItem: <CarouselItem imgsrc={images[0].src} />,
           //slideToItem takes index and id
           renderThumb: (<div onClick={() => slideToItem("item-1")}>
             thumb
@@ -25,7 +37,7 @@ const Carousel: FC = () => {
         },
         {
           id: "item-2",
-          renderItem: <div>Item 2</div>,
+          renderItem: <CarouselItem imgsrc={images[1].src}/>,
           renderThumb: (<div>
             thumb
           </div>)
@@ -33,17 +45,24 @@ const Carousel: FC = () => {
       ],
     });
 
+    useListenToCustomEvent(event => {
+      if (event.eventName === 'onSlideStartChange') {
+        const activeImage = images[event.nextItem]
+        setImageOrientation(activeImage.orientation)
+      }
+    })
+
   return (
     <div className="carousel-container">
       {/*
     <p>tittel</p>
     det er mulig at renderItem kan ha tittel også
     */}
-        { state.retroMode ? <button onClick={slideToNextItem}>next</button> : <button>normal next</button> }     
-      <div className="carousel-wrapper">
+      <div className={imageOrientation === "landscape" ? "carousel-wrapper-landscape" : "carousel-wrapper-portrait"}>
         {carouselFragment}
       </div>
         { state.retroMode ? <button onClick={slideToPrevItem}>back</button> : <button>normal back</button> }
+        { state.retroMode ? <button onClick={slideToNextItem}>next</button> : <button>normal next</button> }     
       <div className="thumbs-wrapper">
         {thumbsFragment}
       </div>
