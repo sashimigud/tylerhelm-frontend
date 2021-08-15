@@ -5,7 +5,7 @@ import Carousel from '../../../common/carousel/Carousel.component';
 
 const BoringHomeContent: FC = () => {
   return (
-    <div>
+    <div className="bh-content-container">
       <Carousel />
     </div>
   )

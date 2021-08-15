@@ -61,8 +61,8 @@ const Carousel: FC = () => {
       <div className={imageOrientation === "landscape" ? "carousel-wrapper-landscape" : "carousel-wrapper-portrait"}>
         {carouselFragment}
       </div>
-        { state.retroMode ? <button onClick={slideToPrevItem}>back</button> : <button>normal back</button> }
-        { state.retroMode ? <button onClick={slideToNextItem}>next</button> : <button>normal next</button> }     
+        { state.retroMode ? <button onClick={slideToPrevItem}>back</button> : <button onClick={slideToPrevItem}>normal back</button> }
+        { state.retroMode ? <button onClick={slideToNextItem}>next</button> : <button onClick={slideToNextItem}>normal next</button> }     
       <div className="thumbs-wrapper">
         {thumbsFragment}
       </div>

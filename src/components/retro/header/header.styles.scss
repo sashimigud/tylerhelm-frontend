@@ -1,3 +1,5 @@
+$medium-breakpoint: 500px;
+
 .header-container {
   width: 100%;
   background-color: #7aa9b5;
@@ -18,6 +20,11 @@
     .logo {
       width: 35px;
       height: 35px;
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        width: 30px;
+        height: 30px;
+      }
     }
 
     div {
@@ -26,6 +33,10 @@
       display: flex;
       flex-direction: row;
       align-items: center;
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        margin-left: 0;
+      }
 
       p {
         margin-left: 10px;
@@ -48,6 +59,11 @@
         &:hover {
           background-image: url('../home/assets/ct-home-hover-header.png');
         }
+
+        @media only screen and (max-width: $medium-breakpoint) {
+          width: 52px;
+          height: 30px;
+        }
       }
 
       .h-l-about {
@@ -58,6 +74,11 @@
         &:hover {
           background-image: url('../home/assets/ct-about-hover-header.png');
         }
+
+        @media only screen and (max-width: $medium-breakpoint) {
+          width: 66px;
+          height: 20px;
+        }
       }
     }
   }
@@ -66,5 +87,10 @@
     width: 90px;
     height: 55px;
     cursor: pointer;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      width: 55px;
+      height: 45px;
+    }
   }
 }

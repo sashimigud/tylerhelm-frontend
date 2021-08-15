@@ -8,9 +8,10 @@ const BoringHome = () => {
   return (
     <div className="boring-home-container">
       <RetroSwitch />
-      <p>hello boring company</p>
 
-      <BoringHomeContent />
+      <div className="boring-home-content-container">
+        <BoringHomeContent />
+      </div>
     </div>
   )
 }

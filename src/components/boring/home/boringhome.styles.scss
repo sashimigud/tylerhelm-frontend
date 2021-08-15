@@ -1,0 +1,10 @@
+.boring-home-container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+
+  .boring-home-content-container {
+    display: flex;
+    justify-content: center;
+  }
+}
