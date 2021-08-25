@@ -1,0 +1,144 @@
+$medium-breakpoint: 500px;
+
+.retro-content-container {
+  .retro-img {
+    pointer-events: none;
+  }
+
+  .r-img-1 {
+    position: absolute;
+    top: 90px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      top: 60px;
+      left: 5px;
+      width: 60px;
+      height: 65px;
+    }
+  }
+
+  .r-img-2 {
+    position: absolute;
+    top: 150px;
+    left: 70px;
+    width: 150px;
+    height: 100px;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      position: absolute;
+      top: 105px;
+      left: 45px;
+      width: 100px;
+      height: 70px;
+    }
+  }
+
+  .r-img-3 {
+    position: absolute;
+    top: 240px;
+    left: 50px;
+    width: 175px;
+    height: 150px;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      position: absolute;
+      top: 168px;
+      left: 45px;
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  .r-img-4 {
+    position: absolute;
+    bottom: 60px;
+    left: 190px;
+    width: 95px;
+    height: 80px;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      bottom: 10px;
+      left: 185px;
+      width: 45px;
+      height: 40px;
+    }
+  }
+
+  .r-img-5 {
+    position: absolute;
+    bottom: 70px;
+    left: 5px;
+    width: 180px;
+    height: 145px;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      bottom: 100px;
+      left: 5px;
+      width: 100px;
+      height: 80px;
+    }
+  }
+
+  .r-img-6 {
+    position: absolute;
+    top: 210px;
+    right: 10px;
+    width: 65px;
+    height: 60px;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      top: 150px;
+      right: 5px;
+      width: 65px;
+      height: 55px;
+    }
+  }
+
+  .r-img-7 {
+    position: absolute;
+    bottom: 65px;
+    right: 50px;
+    width: 80px;
+    height: 85px;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      bottom: 10px;
+      right: 10px;
+      width: 63px;
+      height: 70px;
+    }
+  }
+
+  .r-img-8 {
+    position: absolute;
+    bottom: 115px;
+    right: 145px;
+    width: 290px;
+    height: 67px;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      bottom: 100px;
+      right: 10px;
+      width: 215px;
+      height: 50px;
+    }
+  }
+
+  .r-img-9 {
+    position: absolute;
+    top: 150px;
+    right: 90px;
+    width: 75px;
+    height: 70px;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      top: 185px;
+      right: 75px;
+      width: 45px;
+      height: 45px;
+    }
+  }
+}

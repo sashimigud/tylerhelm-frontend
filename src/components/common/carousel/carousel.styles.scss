@@ -1,13 +1,27 @@
+$medium-breakpoint: 500px;
+
 .carousel-container {
   padding-top: 100px;
 
   .carousel-wrapper-landscape {
-    width: 50rem;
-    height: 35rem;
+    width: 600px;
+    height: 350px;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      width: 95%;
+      height: 300px;
+      margin: auto;
+    }
   }
 
   .carousel-wrapper-portrait {
-    width: 50rem;
-    height: 40rem;
+    width: 600px;
+    height: 500px;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      width: 95%;
+      height: 300px;
+      margin: auto;
+    }
   }
 }

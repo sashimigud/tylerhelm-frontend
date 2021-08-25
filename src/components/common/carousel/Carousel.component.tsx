@@ -12,45 +12,98 @@ const Carousel: FC = () => {
 
   const images = [
     {
-      src: "test-images/pagliacci-test.jpg",
-      orientation: "landscape"
+      src: 'test-images/pagliacci-test.jpg',
+      orientation: 'landscape',
     },
     {
-      src: "test-images/flinkpike-test.png",
-      orientation: "portrait"
+      src: 'test-images/flinkpike-test.png',
+      orientation: 'portrait',
+    },
+    {
+      orientation: 'portrait',
+    },
+    {
+      orientation: 'portrait',
+    },
+    {
+      orientation: 'portrait',
+    },
+    {
+      orientation: 'landscape',
+    },
+    {
+      orientation: 'portrait',
+    },
+    {
+      orientation: 'landscape',
+    },
+  ];
+
+  const {
+    carouselFragment,
+    thumbsFragment,
+    useListenToCustomEvent,
+    slideToPrevItem,
+    slideToNextItem,
+    slideToItem,
+  } = useSpringCarousel({
+    //index of item to start with
+    initialActiveItem: 1,
+    withThumbs: true,
+    items: [
+      {
+        id: 'item-1',
+        renderItem: <CarouselItem imgsrc={images[0].src} />,
+        //slideToItem takes index and id
+        renderThumb: <div onClick={() => slideToItem('item-1')}>thumb</div>,
+      },
+      {
+        id: 'item-2',
+        renderItem: <CarouselItem imgsrc={images[1].src} />,
+        //slideToItem takes index and id
+        renderThumb: <div>thumb</div>,
+      },
+      {
+        id: 'item-3',
+        renderItem: <CarouselItem imgsrc={images[1].src} />,
+        renderThumb: <div>thumb</div>,
+      },
+      {
+        id: 'item-4',
+        renderItem: <CarouselItem imgsrc={images[1].src} />,
+        renderThumb: <div>thumb</div>,
+      },
+      {
+        id: 'item-5',
+        renderItem: <CarouselItem imgsrc={images[1].src} />,
+        renderThumb: <div>thumb</div>,
+      },
+      {
+        id: 'item-6',
+        renderItem: <CarouselItem imgsrc={images[0].src} />,
+        //slideToItem takes index and id
+        renderThumb: <div>thumb</div>,
+      },
+      {
+        id: 'item-7',
+        renderItem: <CarouselItem imgsrc={images[1].src} />,
+        renderThumb: <div>thumb</div>,
+      },
+      {
+        id: 'item-6',
+        renderItem: <CarouselItem imgsrc={images[0].src} />,
+        //slideToItem takes index and id
+        renderThumb: <div>thumb</div>,
+      },
+    ],
+  });
+
+  useListenToCustomEvent((event) => {
+    if (event.eventName === 'onSlideStartChange') {
+      const activeImage = images[event.nextItem];
+      setImageOrientation(activeImage.orientation);
     }
-  ]
-
-  const { carouselFragment, thumbsFragment, useListenToCustomEvent, slideToPrevItem, slideToNextItem, slideToItem } =
-    useSpringCarousel({
-      //index of item to start with
-      initialActiveItem: 1,
-      withThumbs: true,
-      items: [
-        {
-          id: "item-1",
-          renderItem: <CarouselItem imgsrc={images[0].src} />,
-          //slideToItem takes index and id
-          renderThumb: (<div onClick={() => slideToItem("item-1")}>
-            thumb
-            </div>)
-        },
-        {
-          id: "item-2",
-          renderItem: <CarouselItem imgsrc={images[1].src}/>,
-          renderThumb: (<div>
-            thumb
-          </div>)
-        },
-      ],
-    });
-
-    useListenToCustomEvent(event => {
-      if (event.eventName === 'onSlideStartChange') {
-        const activeImage = images[event.nextItem]
-        setImageOrientation(activeImage.orientation)
-      }
-    })
+  });
 
   return (
     <div className="carousel-container">
@@ -58,14 +111,25 @@ const Carousel: FC = () => {
     <p>tittel</p>
     det er mulig at renderItem kan ha tittel også
     */}
-      <div className={imageOrientation === "landscape" ? "carousel-wrapper-landscape" : "carousel-wrapper-portrait"}>
+      <div
+        className={
+          imageOrientation === 'landscape'
+            ? 'carousel-wrapper-landscape'
+            : 'carousel-wrapper-portrait'
+        }>
         {carouselFragment}
       </div>
-        { state.retroMode ? <button onClick={slideToPrevItem}>back</button> : <button onClick={slideToPrevItem}>normal back</button> }
-        { state.retroMode ? <button onClick={slideToNextItem}>next</button> : <button onClick={slideToNextItem}>normal next</button> }     
-      <div className="thumbs-wrapper">
-        {thumbsFragment}
-      </div>
+      {state.retroMode ? (
+        <button onClick={slideToPrevItem}>back</button>
+      ) : (
+        <button onClick={slideToPrevItem}>normal back</button>
+      )}
+      {state.retroMode ? (
+        <button onClick={slideToNextItem}>next</button>
+      ) : (
+        <button onClick={slideToNextItem}>normal next</button>
+      )}
+      <div className="thumbs-wrapper">{thumbsFragment}</div>
     </div>
   );
 };
