@@ -48,7 +48,7 @@ const Carousel: FC = () => {
     slideToItem,
   } = useSpringCarousel({
     //index of item to start with
-    initialActiveItem: 1,
+    initialActiveItem: 0,
     withThumbs: true,
     items: [
       {
