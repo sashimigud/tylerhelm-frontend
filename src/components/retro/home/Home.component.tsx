@@ -1,5 +1,5 @@
 import React, { useState, FC } from 'react';
-import './home.styles.scss'
+import './home.styles.scss';
 
 import Menu from 'react-burger-menu/lib/menus/slide';
 import Header from '../header/Header.component';
@@ -26,27 +26,29 @@ const Home: FC = () => {
     fetchImages();
   }, []);*/
 
-  return <div id="home-container">
-    <RetroSwitch />
-    <Menu 
-    customBurgerIcon={false}
-    isOpen={showFlyout}
-    onClose={() => setShowFlyout(false)}
-    right 
-    pageWrapId={"page-wrap"} 
-    outerContainerId={"home-container"}>
+  return (
+    <div id="home-container">
+      <RetroSwitch />
+      <Menu
+        customBurgerIcon={false}
+        isOpen={showFlyout}
+        onClose={() => setShowFlyout(false)}
+        right
+        pageWrapId={'page-wrap'}
+        outerContainerId={'home-container'}>
         <div className="cooltext ct-home"></div>
         <div className="cooltext ct-about"></div>
         <div className="cooltext ct-redtape"></div>
         <div className="gif-girls"></div>
-    </Menu>
-    <main id="page-wrap">
-      <Header toggleFlyout={onShowFlyout} />
-      <div className="content-outer-container">
-        <Content />
-      </div>
-    </main>
-  </div>
-}
+      </Menu>
+      <main id="page-wrap">
+        <Header toggleFlyout={onShowFlyout} />
+        <div className="content-outer-container">
+          <Content />
+        </div>
+      </main>
+    </div>
+  );
+};
 
 export default Home;

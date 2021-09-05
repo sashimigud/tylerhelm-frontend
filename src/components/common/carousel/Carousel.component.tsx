@@ -5,6 +5,8 @@ import { useSpringCarousel } from 'react-spring-carousel-js';
 import { useStore } from '../../../utils/globalStore';
 
 import CarouselItem from './carousel-item/CarouselItem.component';
+import RetroBtn from './retro-carousel-btns/RetroBtn.component';
+import { BUTTON_DIRECTIONS } from '../../../_constants/buttonSettings';
 
 const Carousel: FC = () => {
   const { state } = useStore();
@@ -119,16 +121,24 @@ const Carousel: FC = () => {
         }>
         {carouselFragment}
       </div>
-      {state.retroMode ? (
-        <button onClick={slideToPrevItem}>back</button>
-      ) : (
-        <button onClick={slideToPrevItem}>normal back</button>
-      )}
-      {state.retroMode ? (
-        <button onClick={slideToNextItem}>next</button>
-      ) : (
-        <button onClick={slideToNextItem}>normal next</button>
-      )}
+      <div className="controls-container">
+        {state.retroMode ? (
+          <RetroBtn
+            onClick={slideToPrevItem}
+            direction={BUTTON_DIRECTIONS.PREVIOUS}
+          />
+        ) : (
+          <button onClick={slideToPrevItem}>normal back</button>
+        )}
+        {state.retroMode ? (
+          <RetroBtn
+            onClick={slideToNextItem}
+            direction={BUTTON_DIRECTIONS.NEXT}
+          />
+        ) : (
+          <button onClick={slideToNextItem}>normal next</button>
+        )}
+      </div>
       <div className="thumbs-wrapper">{thumbsFragment}</div>
     </div>
   );
