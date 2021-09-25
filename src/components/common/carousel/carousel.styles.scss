@@ -2,31 +2,18 @@ $medium-breakpoint: 500px;
 
 .carousel-container {
   padding-top: 100px;
-  width: 560px;
+  max-width: 560px;
   margin: auto;
 
   .carousel-wrapper-landscape {
     width: 100%;
     height: 420px;
     margin: auto;
-
-    @media only screen and (max-width: $medium-breakpoint) {
-      width: 95%;
-      height: 300px;
-      margin: auto;
-    }
   }
 
   .carousel-wrapper-portrait {
     width: 100%;
-    height: 500px;
     margin: auto;
-
-    @media only screen and (max-width: $medium-breakpoint) {
-      width: 95%;
-      height: 300px;
-      margin: auto;
-    }
   }
 
   .controls-container {
@@ -34,5 +21,6 @@ $medium-breakpoint: 500px;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    margin: 10px 0 30px;
   }
 }

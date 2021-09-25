@@ -15,9 +15,9 @@ const RetroBtn: FC<IRetroBtnProps> = ({
   return (
     <div className="retrobtn-container" onClick={onClick}>
       {direction === BUTTON_DIRECTIONS.NEXT ? (
-        <img className="next" src="assets/next.gif" alt="" />
+        <img className="next" src="assets/next.gif" alt="next" />
       ) : (
-        <img className="previous" src="assets/back.gif" alt="" />
+        <img className="previous" src="assets/back.gif" alt="previous" />
       )}
     </div>
   );
