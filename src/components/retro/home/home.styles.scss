@@ -5,14 +5,14 @@
   height: 100%;
 
   .content-outer-container {
-    height: calc(100vh - 82px);
+    min-height: calc(100vh - 82px);
     display: flex;
     justify-content: center;
     background-color: #ffebfb;
     margin-top: 7px;
     box-shadow: 0px 10px 15px 3px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 10px 15px 3px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 10px 15px 3px rgba(0,0,0, 0.75);
+    -moz-box-shadow: 0px 10px 15px 3px rgba(0, 0, 0, 0.75);
   }
 
   .menu-item {
@@ -31,7 +31,7 @@
   }
 
   .ct-home {
-     background-image: url('./assets/home.gif');
+    background-image: url('./assets/home.gif');
   }
 
   .ct-home:hover {
@@ -66,64 +66,64 @@
     cursor: pointer;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.75);
   }
 }
 
 // --------------------- flyout styles
 
-  /* Position and sizing of clickable cross button */
+/* Position and sizing of clickable cross button */
 
-  .bm-cross-button {
-    height: 24px;
-    width: 24px;
-  }
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
 
-  /* Color/shape of close button cross */
-  .bm-cross {
-    background: #242525;
-  }
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #242525;
+}
 
-  /*
+/*
     Sidebar wrapper styles
     Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
   */
-  .bm-menu-wrap {
-    position: fixed;
-    height: 100%;
-    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
-  }
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
 
-  /* General sidebar styles */
-  .bm-menu {
-    background: #ffd2f5;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
-    //overflow: inherit!important;
-  }
+/* General sidebar styles */
+.bm-menu {
+  background: #ffd2f5;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  //overflow: inherit!important;
+}
 
-  /* Morph shape necessary with bubble or elastic */
-  .bm-morph-shape {
-    fill: #373a47;
-  }
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
 
-  /* Wrapper for item list */
-  .bm-item-list {
-    color: #b8b7ad;
-    padding: 0 0.8em;
-  }
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0 0.8em;
+}
 
-  /* Individual item */
-  .bm-item {
-    display: inline-block;
-    outline: none;
-  }
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  outline: none;
+}
 
-  /* Styling of overlay */
-  .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
-  }
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}

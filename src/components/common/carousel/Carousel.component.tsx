@@ -2,14 +2,11 @@ import React, { FC, useState } from 'react';
 import './carousel.styles.scss';
 import { useSpringCarousel } from 'react-spring-carousel-js';
 
-import { useStore } from '../../../utils/globalStore';
-
+import Controls from '../controls/Controls.component';
 import CarouselItem from './carousel-item/CarouselItem.component';
-import RetroBtn from './retro-carousel-btns/RetroBtn.component';
-import { BUTTON_DIRECTIONS } from '../../../_constants/buttonSettings';
+import CarouselThumb from './carousel-thumb/CarouselThumb.component';
 
 const Carousel: FC = () => {
-  const { state } = useStore();
   const [imageOrientation, setImageOrientation] = useState('landscape');
 
   const images = [
@@ -57,45 +54,45 @@ const Carousel: FC = () => {
         id: 'item-1',
         renderItem: <CarouselItem imgsrc={images[0].src} />,
         //slideToItem takes index and id
-        renderThumb: <div onClick={() => slideToItem('item-1')}>thumb</div>,
+        renderThumb: <CarouselThumb onClick={() => slideToItem('item-1')} />,
       },
       {
         id: 'item-2',
         renderItem: <CarouselItem imgsrc={images[1].src} />,
         //slideToItem takes index and id
-        renderThumb: <div>thumb</div>,
+        renderThumb: <CarouselThumb />,
       },
       {
         id: 'item-3',
         renderItem: <CarouselItem imgsrc={images[1].src} />,
-        renderThumb: <div>thumb</div>,
+        renderThumb: <CarouselThumb />,
       },
       {
         id: 'item-4',
         renderItem: <CarouselItem imgsrc={images[1].src} />,
-        renderThumb: <div>thumb</div>,
+        renderThumb: <CarouselThumb />,
       },
       {
         id: 'item-5',
         renderItem: <CarouselItem imgsrc={images[1].src} />,
-        renderThumb: <div>thumb</div>,
+        renderThumb: <CarouselThumb />,
       },
       {
         id: 'item-6',
         renderItem: <CarouselItem imgsrc={images[0].src} />,
         //slideToItem takes index and id
-        renderThumb: <div>thumb</div>,
+        renderThumb: <CarouselThumb />,
       },
       {
         id: 'item-7',
         renderItem: <CarouselItem imgsrc={images[1].src} />,
-        renderThumb: <div>thumb</div>,
+        renderThumb: <CarouselThumb />,
       },
       {
-        id: 'item-6',
+        id: 'item-8',
         renderItem: <CarouselItem imgsrc={images[0].src} />,
         //slideToItem takes index and id
-        renderThumb: <div>thumb</div>,
+        renderThumb: <CarouselThumb />,
       },
     ],
   });
@@ -121,24 +118,10 @@ const Carousel: FC = () => {
         }>
         {carouselFragment}
       </div>
-      <div className="controls-container">
-        {state.retroMode ? (
-          <RetroBtn
-            onClick={slideToPrevItem}
-            direction={BUTTON_DIRECTIONS.PREVIOUS}
-          />
-        ) : (
-          <button onClick={slideToPrevItem}>normal back</button>
-        )}
-        {state.retroMode ? (
-          <RetroBtn
-            onClick={slideToNextItem}
-            direction={BUTTON_DIRECTIONS.NEXT}
-          />
-        ) : (
-          <button onClick={slideToNextItem}>normal next</button>
-        )}
-      </div>
+      <Controls
+        slideToNextItem={slideToNextItem}
+        slideToPrevItem={slideToPrevItem}
+      />
       <div className="thumbs-wrapper">{thumbsFragment}</div>
     </div>
   );
