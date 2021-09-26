@@ -7,36 +7,45 @@ import CarouselItem from './carousel-item/CarouselItem.component';
 import CarouselThumb from './carousel-thumb/CarouselThumb.component';
 
 const Carousel: FC = () => {
-  const [imageOrientation, setImageOrientation] = useState('landscape');
-
   const images = [
     {
       src: 'test-images/pagliacci-test.jpg',
       orientation: 'landscape',
+      title: 'title1',
     },
     {
       src: 'test-images/flinkpike-test.png',
       orientation: 'portrait',
+      title: 'title2',
     },
     {
       orientation: 'portrait',
+      title: 'title3',
     },
     {
       orientation: 'portrait',
+      title: 'title4',
     },
     {
       orientation: 'portrait',
+      title: 'title5',
     },
     {
       orientation: 'landscape',
+      title: 'title6',
     },
     {
       orientation: 'portrait',
+      title: 'title7',
     },
     {
       orientation: 'landscape',
+      title: 'title8',
     },
   ];
+
+  const [imageOrientation, setImageOrientation] = useState('landscape');
+  const [title, setTitle] = useState<string>(images[0].title);
 
   const {
     carouselFragment,
@@ -54,13 +63,23 @@ const Carousel: FC = () => {
         id: 'item-1',
         renderItem: <CarouselItem imgsrc={images[0].src} />,
         //slideToItem takes index and id
-        renderThumb: <CarouselThumb onClick={() => slideToItem('item-1')} />,
+        renderThumb: (
+          <CarouselThumb
+            img={images[0].src}
+            onClick={() => slideToItem('item-1')}
+          />
+        ),
       },
       {
         id: 'item-2',
         renderItem: <CarouselItem imgsrc={images[1].src} />,
         //slideToItem takes index and id
-        renderThumb: <CarouselThumb />,
+        renderThumb: (
+          <CarouselThumb
+            img={images[1].src}
+            onClick={() => slideToItem('item-2')}
+          />
+        ),
       },
       {
         id: 'item-3',
@@ -101,15 +120,13 @@ const Carousel: FC = () => {
     if (event.eventName === 'onSlideStartChange') {
       const activeImage = images[event.nextItem];
       setImageOrientation(activeImage.orientation);
+      setTitle(activeImage.title);
     }
   });
 
   return (
     <div className="carousel-container">
-      {/*
-    <p>tittel</p>
-    det er mulig at renderItem kan ha tittel også
-    */}
+      <p className="image-title">{title}</p>
       <div
         className={
           imageOrientation === 'landscape'

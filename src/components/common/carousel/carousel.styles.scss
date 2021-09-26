@@ -1,18 +1,53 @@
 $medium-breakpoint: 500px;
 
 .carousel-container {
-  padding-top: 100px;
+  padding-top: 80px;
   max-width: 560px;
   margin: auto;
+
+  .image-title {
+    text-align: center;
+    font-size: 30px;
+    margin: 0 0 10px;
+  }
 
   .carousel-wrapper-landscape {
     width: 100%;
     height: 420px;
+    min-height: 280px;
     margin: auto;
+
+    @media only screen and (max-width: 375px) {
+      height: 275px;
+    }
+
+    @media only screen and (min-width: 370px) and (max-width: 400px) {
+      height: 300px;
+    }
+
+    @media only screen and (min-width: 400px) and (max-width: 428px) {
+      height: 320px;
+    }
+
+    @media only screen and (min-width: 428px) and (max-width: 453px) {
+      height: 340px;
+    }
+
+    @media only screen and (min-width: 453px) and (max-width: 481px) {
+      height: 360px;
+    }
+
+    @media only screen and (min-width: 481px) and (max-width: 499px) {
+      height: 380px;
+    }
   }
 
   .carousel-wrapper-portrait {
     width: 100%;
     margin: auto;
+  }
+
+  .thumbs-wrapper {
+    margin-bottom: 100px;
   }
 }

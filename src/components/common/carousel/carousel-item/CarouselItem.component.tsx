@@ -8,7 +8,6 @@ type carouselItemProps = {
 const CarouselItem: FC<carouselItemProps> = ({ imgsrc }: carouselItemProps) => {
   return (
     <div className="carousel-item-container">
-      {/* <p>tittel</p> */}
       <img src={imgsrc} alt="" />
     </div>
   );
