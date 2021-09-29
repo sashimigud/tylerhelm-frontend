@@ -2,6 +2,7 @@ $medium-breakpoint: 500px;
 
 .carousel-container {
   padding-top: 80px;
+  padding-bottom: 80px;
   max-width: 560px;
   margin: auto;
 
@@ -9,6 +10,8 @@ $medium-breakpoint: 500px;
     text-align: center;
     font-size: 30px;
     margin: 0 0 10px;
+    background-color: aqua;
+    z-index: 10000;
   }
 
   .carousel-wrapper-landscape {
@@ -45,9 +48,5 @@ $medium-breakpoint: 500px;
   .carousel-wrapper-portrait {
     width: 100%;
     margin: auto;
-  }
-
-  .thumbs-wrapper {
-    margin-bottom: 100px;
   }
 }

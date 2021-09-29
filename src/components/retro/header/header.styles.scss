@@ -7,6 +7,7 @@ $medium-breakpoint: 500px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 10000000;
   box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
