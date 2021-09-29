@@ -46,7 +46,7 @@ $medium-breakpoint: 500px;
       }
 
       .header-link {
-        margin-left: 10px;
+        margin-left: 15px;
         cursor: pointer;
         background-position: center;
         background-size: cover;
@@ -74,6 +74,26 @@ $medium-breakpoint: 500px;
 
         &:hover {
           background-image: url('../home/assets/ct-about-hover-header.png');
+        }
+
+        @media only screen and (max-width: $medium-breakpoint) {
+          width: 66px;
+          height: 20px;
+        }
+      }
+
+      .h-l-nfts {
+        height: 30px;
+        width: 100px;
+        background-image: url('../home/assets/nfts.gif');
+        border-radius: 3px;
+        border: 0.5px solid black;
+        box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+
+        &:hover {
+          background-image: url('../home/assets/nfts-hover.gif');
         }
 
         @media only screen and (max-width: $medium-breakpoint) {
