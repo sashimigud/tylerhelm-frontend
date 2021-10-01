@@ -4,6 +4,11 @@
   align-items: center;
   justify-content: space-evenly;
   margin: 10px 0;
-  background-color: aquamarine;
+  position: relative;
   z-index: 10000;
+}
+
+.retro-controls {
+  background-color: aquamarine;
+  background-color: rgba(127, 255, 212, 0.8);
 }

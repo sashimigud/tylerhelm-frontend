@@ -7,10 +7,12 @@ $medium-breakpoint: 500px;
   margin: auto;
 
   .image-title {
+    position: relative;
     text-align: center;
     font-size: 30px;
     margin: 0 0 10px;
     background-color: aqua;
+    background-color: rgba(0, 255, 255, 0.8);
     z-index: 10000;
   }
 

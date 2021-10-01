@@ -16,7 +16,10 @@ const Controls = ({
   const { state } = useStore();
 
   return (
-    <div className="controls-container">
+    <div
+      className={
+        'controls-container ' + (state.retroMode ? 'retro-controls' : '')
+      }>
       {state.retroMode ? (
         <RetroBtn
           onClick={slideToPrevItem}
