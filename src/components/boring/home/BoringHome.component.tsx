@@ -13,7 +13,7 @@ const BoringHome = () => {
         <BoringHomeContent />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default BoringHome;

@@ -1,4 +1,4 @@
-import React, { useEffect, FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import Switch from '@material-ui/core/Switch';
 import './retroSwitch.styles.scss';
@@ -11,12 +11,25 @@ const RetroSwitch: FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (state.retroMode && location.pathname !== '/retro') {
+    if (state.retroMode === null && location.pathname === '/boring') {
+      dispatch({ type: 'setBoring' });
+    }
+
+    if (state.retroMode === null && location.pathname === '/retro') {
+      dispatch({ type: 'setRetro' });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  function toggleRetro() {
+    dispatch({ type: 'toggleRetro' });
+
+    if (location.pathname === '/boring') {
       history.push('retro');
-    } else if (!state.retroMode && location.pathname !== '/boring') {
+    } else if (location.pathname === '/retro') {
       history.push('boring');
     }
-  }, [state.retroMode, history, location]);
+  }
 
   return (
     <div
@@ -24,12 +37,14 @@ const RetroSwitch: FC = () => {
         'retro-switch-container ' + (state.retroMode ? 'retro-container' : '')
       }>
       <p>Retro-switch</p>
-      <Switch
-        checked={state.retroMode}
-        onChange={() => dispatch({ type: 'toggleRetro' })}
-        name="retro"
-        color="primary"
-      />
+      {state.retroMode !== null ? (
+        <Switch
+          checked={state.retroMode}
+          onChange={() => toggleRetro()}
+          name="retro"
+          color="primary"
+        />
+      ) : null}
     </div>
   );
 };

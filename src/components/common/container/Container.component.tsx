@@ -2,18 +2,18 @@ import React, { FC } from 'react';
 import './container.styles.scss';
 
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
-} from "react-router-dom";
+  Redirect,
+} from 'react-router-dom';
 
 import Home from '../../retro/home/Home.component';
 import BoringHome from '../../boring/home/BoringHome.component';
 
 const Container: FC = () => {
   return (
-    <div className="container-container"> 
+    <div className="container-container">
       <Router>
         <Switch>
           <Route exact path="/">
@@ -23,13 +23,15 @@ const Container: FC = () => {
             <Home />
           </Route>
           <Route path="/boring">
-            {/* TODO: boring app */}
             <BoringHome />
+          </Route>
+          <Route path="*">
+            <Redirect to="/retro" />
           </Route>
         </Switch>
       </Router>
     </div>
-  )
-}
+  );
+};
 
 export default Container;
