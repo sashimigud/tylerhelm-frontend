@@ -1,18 +1,23 @@
-import React, { useState, FC } from 'react';
+import React, { FC } from 'react';
 import './home.styles.scss';
+
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
+
+import { HEADER_NAV } from '../../../_constants/headerNavigation';
+import { useStore } from '../../../utils/globalStore';
 
 import Menu from 'react-burger-menu/lib/menus/slide';
 import Header from '../header/Header.component';
 import Content from '../home/content/Content.component';
 import RetroSwitch from '../../common/retro-switch/RetroSwitch.component';
+import About from '../../retro/about/About.component';
+import Nfts from '../../retro/nfts/Nfts.component';
 
 const Home: FC = () => {
-  const [showFlyout, setShowFlyout] = useState<boolean>(false);
-  //const [apiData, setApiData] = useState();
+  const { state, dispatch } = useStore();
+  const { path } = useRouteMatch();
 
-  function onShowFlyout(): void {
-    setShowFlyout(!showFlyout);
-  }
+  //const [apiData, setApiData] = useState();
 
   /*useEffect(() => {
     async function fetchImages() {
@@ -31,8 +36,8 @@ const Home: FC = () => {
       <RetroSwitch />
       <Menu
         customBurgerIcon={false}
-        isOpen={showFlyout}
-        onClose={() => setShowFlyout(false)}
+        isOpen={state.isFlyoutOpen}
+        onClose={() => dispatch({ type: 'toggleShowFlyout' })}
         right
         pageWrapId={'page-wrap'}
         outerContainerId={'home-container'}>
@@ -42,9 +47,19 @@ const Home: FC = () => {
         <div className="gif-girls"></div>
       </Menu>
       <main id="page-wrap">
-        <Header toggleFlyout={onShowFlyout} />
+        <Header />
         <div className="content-outer-container">
-          <Content />
+          <Switch>
+            <Route exact path={`${path}/${HEADER_NAV.ABOUT}`}>
+              <About />
+            </Route>
+            <Route exact path={`${path}/${HEADER_NAV.NFTS}`}>
+              <Nfts />
+            </Route>
+            <Route exact path="">
+              <Content />
+            </Route>
+          </Switch>
         </div>
       </main>
     </div>

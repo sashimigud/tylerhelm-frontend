@@ -2,43 +2,44 @@ import React, { FC } from 'react';
 import './header.styles.scss';
 
 import { HEADER_NAV } from '../../../_constants/headerNavigation';
+import { useHistory, useRouteMatch } from 'react-router-dom';
+import { useStore } from '../../../utils/globalStore';
 
-import { useHistory } from 'react-router-dom';
-
-type HeaderProps = {
-  toggleFlyout: () => void;
-};
-
-const Header: FC<HeaderProps> = ({ toggleFlyout }: HeaderProps) => {
+const Header: FC = () => {
   const history = useHistory();
+  const { path } = useRouteMatch();
+  const { dispatch } = useStore();
 
   function navigate(navigateTo: string): void {
-    console.log('navigate to: ', navigateTo);
-    //history.push(navigateTo);
-    history.replace('retro/about');
+    history.push(navigateTo);
   }
 
   return (
     <div className="header-container">
       <div className="site-controls">
-        <img className="logo" src="assets/datamaskin.gif" alt="" />
+        <img
+          onClick={() => navigate('')}
+          className="logo"
+          src="/assets/datamaskin.gif"
+          alt=""
+        />
         <div>
           <div
             className="header-link h-l-home"
-            onClick={() => navigate('retro')}></div>
+            onClick={() => navigate('')}></div>
           <div
             className="header-link h-l-about"
-            onClick={() => navigate(`${HEADER_NAV.ABOUT}`)}></div>
+            onClick={() => navigate(`${path}/${HEADER_NAV.ABOUT}`)}></div>
           <div
             className="header-link h-l-nfts"
-            onClick={() => navigate(`/${HEADER_NAV.NFTS}`)}></div>
+            onClick={() => navigate(`${path}/${HEADER_NAV.NFTS}`)}></div>
         </div>
       </div>
       <img
         className="burger-menu"
-        src="assets/vaporwave_cat.gif"
+        src="/assets/vaporwave_cat.gif"
         alt=""
-        onClick={() => toggleFlyout()}
+        onClick={() => dispatch({ type: 'toggleShowFlyout' })}
       />
     </div>
   );

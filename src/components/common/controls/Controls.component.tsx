@@ -18,9 +18,9 @@ const Controls = ({
   return (
     <div
       className={
-        'controls-container ' + (state.retroMode ? 'retro-controls' : '')
+        'controls-container ' + (state.isRetroMode ? 'retro-controls' : '')
       }>
-      {state.retroMode ? (
+      {state.isRetroMode ? (
         <RetroBtn
           onClick={slideToPrevItem}
           direction={BUTTON_DIRECTIONS.PREVIOUS}
@@ -28,7 +28,7 @@ const Controls = ({
       ) : (
         <button onClick={slideToPrevItem}>normal back</button>
       )}
-      {state.retroMode ? (
+      {state.isRetroMode ? (
         <RetroBtn
           onClick={slideToNextItem}
           direction={BUTTON_DIRECTIONS.NEXT}

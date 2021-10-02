@@ -4,7 +4,8 @@ const StoreContext = createContext();
 
 const initialState = {
   darkMode: false,
-  retroMode: null,
+  isRetroMode: null,
+  isFlyoutOpen: false,
 };
 
 const reducer = (state, action) => {
@@ -14,20 +15,25 @@ const reducer = (state, action) => {
         ...state,
         darkMode: !state.darkMode,
       };
+    case 'toggleShowFlyout':
+      return {
+        ...state,
+        isFlyoutOpen: !state.isFlyoutOpen,
+      };
     case 'toggleRetro':
       return {
         ...state,
-        retroMode: !state.retroMode,
+        isRetroMode: !state.isRetroMode,
       };
     case 'setRetro':
       return {
         ...state,
-        retroMode: true,
+        isRetroMode: true,
       };
     case 'setBoring':
       return {
         ...state,
-        retroMode: false,
+        isRetroMode: false,
       };
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

@@ -8,11 +8,8 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import { HEADER_NAV } from '../../../_constants/headerNavigation';
 import Home from '../../retro/home/Home.component';
 import BoringHome from '../../boring/home/BoringHome.component';
-import About from '../../retro/about/About.component';
-import Nfts from '../../retro/nfts/Nfts.component';
 
 const Container: FC = () => {
   return (
@@ -25,18 +22,12 @@ const Container: FC = () => {
           <Route path="/retro">
             <Home />
           </Route>
-          <Route path={`/retro/${HEADER_NAV.ABOUT}`}>
-            <About />
-          </Route>
-          <Route path={`/retro/${HEADER_NAV.NFTS}`}>
-            <Nfts />
-          </Route>
           <Route path="/boring">
             <BoringHome />
           </Route>
-          <Route path="*">
+          {/* <Route path="*">
             <Redirect to="/retro" />
-          </Route>
+          </Route> */}
         </Switch>
       </Router>
     </div>

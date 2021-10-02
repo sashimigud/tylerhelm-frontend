@@ -11,11 +11,11 @@ const RetroSwitch: FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (state.retroMode === null && location.pathname === '/boring') {
+    if (state.isRetroMode === null && location.pathname === '/boring') {
       dispatch({ type: 'setBoring' });
     }
 
-    if (state.retroMode === null && location.pathname === '/retro') {
+    if (state.isRetroMode === null && location.pathname === '/retro') {
       dispatch({ type: 'setRetro' });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -34,12 +34,12 @@ const RetroSwitch: FC = () => {
   return (
     <div
       className={
-        'retro-switch-container ' + (state.retroMode ? 'retro-container' : '')
+        'retro-switch-container ' + (state.isRetroMode ? 'retro-container' : '')
       }>
       <p>Retro-switch</p>
-      {state.retroMode !== null ? (
+      {state.isRetroMode !== null ? (
         <Switch
-          checked={state.retroMode}
+          checked={state.isRetroMode}
           onChange={() => toggleRetro()}
           name="retro"
           color="primary"
