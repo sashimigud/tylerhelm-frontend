@@ -11,11 +11,17 @@ const RetroSwitch: FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (state.isRetroMode === null && location.pathname === '/boring') {
+    if (
+      state.isRetroMode === null &&
+      (location.pathname === '/boring' || location.pathname === '/boring/')
+    ) {
       dispatch({ type: 'setBoring' });
     }
 
-    if (state.isRetroMode === null && location.pathname === '/retro') {
+    if (
+      state.isRetroMode === null &&
+      (location.pathname === '/retro' || location.pathname === '/retro/')
+    ) {
       dispatch({ type: 'setRetro' });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

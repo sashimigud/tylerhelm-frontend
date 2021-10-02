@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import './home.styles.scss';
 
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom';
 
 import { HEADER_NAV } from '../../../_constants/headerNavigation';
 import { useStore } from '../../../utils/globalStore';
@@ -56,9 +56,15 @@ const Home: FC = () => {
             <Route exact path={`${path}/${HEADER_NAV.NFTS}`}>
               <Nfts />
             </Route>
-            <Route exact path="">
+            <Route path="">
               <Content />
             </Route>
+            <Route path="*">
+              <Content />
+            </Route>
+            {/* <Route path="*">
+              <Redirect to={`${path}/${HEADER_NAV.NFTS}`} />
+            </Route> */}
           </Switch>
         </div>
       </main>

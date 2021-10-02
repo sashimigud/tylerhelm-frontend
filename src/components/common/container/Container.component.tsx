@@ -25,9 +25,9 @@ const Container: FC = () => {
           <Route path="/boring">
             <BoringHome />
           </Route>
-          {/* <Route path="*">
+          <Route path="*">
             <Redirect to="/retro" />
-          </Route> */}
+          </Route>
         </Switch>
       </Router>
     </div>

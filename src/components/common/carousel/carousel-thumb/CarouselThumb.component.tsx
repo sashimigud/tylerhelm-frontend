@@ -12,7 +12,7 @@ const CarouselThumb: FC<ICarouselThumbProps> = ({
 }: ICarouselThumbProps) => {
   return (
     <div className="carousel-thumb-container" onClick={onClick}>
-      <img src={img} alt="" />
+      <img src={'/' + img} alt="" />
     </div>
   );
 };
