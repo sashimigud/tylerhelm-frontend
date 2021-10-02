@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import './home.styles.scss';
 
-import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import { HEADER_NAV } from '../../../_constants/headerNavigation';
 import { useStore } from '../../../utils/globalStore';

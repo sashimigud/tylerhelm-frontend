@@ -6,7 +6,7 @@
 
   .content-outer-container {
     height: 100%;
-    min-height: calc(100vh - 76px);
+    min-height: calc(100vh - (76px + 88px));
     display: flex;
     justify-content: center;
     background-color: #ffebfb;
