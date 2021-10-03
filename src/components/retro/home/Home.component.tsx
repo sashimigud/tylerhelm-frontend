@@ -12,6 +12,7 @@ import Content from '../home/content/Content.component';
 import RetroSwitch from '../../common/retro-switch/RetroSwitch.component';
 import About from '../../retro/about/About.component';
 import Nfts from '../../retro/nfts/Nfts.component';
+import RedTape from '../../common/red-tape/RedTape.component';
 
 const Home: FC = () => {
   const { state, dispatch } = useStore();
@@ -52,7 +53,9 @@ const Home: FC = () => {
           className="cooltext ct-nfts"
           onClick={() => history.push(`/retro/${HEADER_NAV.NFTS}`)}></div>
         <div className="cooltext ct-redtape"></div>
-        <div className="gif-girls"></div>
+        <div
+          className="gif-girls"
+          onClick={() => history.push(`/retro/${HEADER_NAV.REDTAPE}`)}></div>
       </Menu>
       <main id="page-wrap">
         <Header />
@@ -63,6 +66,9 @@ const Home: FC = () => {
             </Route>
             <Route exact path={`${path}/${HEADER_NAV.NFTS}`}>
               <Nfts />
+            </Route>
+            <Route exact path={`${path}/${HEADER_NAV.REDTAPE}`}>
+              <RedTape />
             </Route>
             <Route path="">
               <Content />

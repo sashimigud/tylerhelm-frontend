@@ -6,7 +6,11 @@ import Controls from '../controls/Controls.component';
 import CarouselItem from './carousel-item/CarouselItem.component';
 import CarouselThumb from './carousel-thumb/CarouselThumb.component';
 
-const Carousel: FC = () => {
+interface ICarouselProps {
+  isRedTape?: boolean;
+}
+
+const Carousel: FC<ICarouselProps> = ({ isRedTape }: ICarouselProps) => {
   const images = [
     {
       src: 'test-images/pagliacci-test.jpg',
@@ -126,7 +130,9 @@ const Carousel: FC = () => {
 
   return (
     <div className="carousel-container">
-      <p className="image-title">{title}</p>
+      <p className={'image-title ' + (isRedTape ? 'redtape-title' : '')}>
+        {title}
+      </p>
       <div
         className={
           imageOrientation === 'landscape'
@@ -136,6 +142,7 @@ const Carousel: FC = () => {
         {carouselFragment}
       </div>
       <Controls
+        isRedTape={isRedTape}
         slideToNextItem={slideToNextItem}
         slideToPrevItem={slideToPrevItem}
       />
