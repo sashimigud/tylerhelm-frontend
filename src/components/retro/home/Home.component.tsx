@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import './home.styles.scss';
 
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, useRouteMatch, useHistory } from 'react-router-dom';
 
 import { HEADER_NAV } from '../../../_constants/headerNavigation';
 import { useStore } from '../../../utils/globalStore';
@@ -16,6 +16,7 @@ import Nfts from '../../retro/nfts/Nfts.component';
 const Home: FC = () => {
   const { state, dispatch } = useStore();
   const { path } = useRouteMatch();
+  const history = useHistory();
 
   //const [apiData, setApiData] = useState();
 
@@ -41,8 +42,15 @@ const Home: FC = () => {
         right
         pageWrapId={'page-wrap'}
         outerContainerId={'home-container'}>
-        <div className="cooltext ct-home"></div>
-        <div className="cooltext ct-about"></div>
+        <div
+          className="cooltext ct-home"
+          onClick={() => history.push('/retro')}></div>
+        <div
+          className="cooltext ct-about"
+          onClick={() => history.push(`/retro/${HEADER_NAV.ABOUT}`)}></div>
+        <div
+          className="cooltext ct-nfts"
+          onClick={() => history.push(`/retro/${HEADER_NAV.NFTS}`)}></div>
         <div className="cooltext ct-redtape"></div>
         <div className="gif-girls"></div>
       </Menu>
@@ -62,9 +70,6 @@ const Home: FC = () => {
             <Route path="*">
               <Content />
             </Route>
-            {/* <Route path="*">
-              <Redirect to={`${path}/${HEADER_NAV.NFTS}`} />
-            </Route> */}
           </Switch>
         </div>
       </main>
