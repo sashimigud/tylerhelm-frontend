@@ -15,7 +15,7 @@ $medium-breakpoint: 500px;
   .r-img-1 {
     position: absolute;
     top: 90px;
-    left: 20px;
+    right: 50px;
     width: 80px;
     height: 80px;
 
@@ -61,21 +61,6 @@ $medium-breakpoint: 500px;
 
   .r-img-4 {
     position: absolute;
-    bottom: 95px;
-    left: 190px;
-    width: 95px;
-    height: 80px;
-
-    @media only screen and (max-width: $medium-breakpoint) {
-      bottom: 185px;
-      left: 185px;
-      width: 45px;
-      height: 40px;
-    }
-  }
-
-  .r-img-5 {
-    position: absolute;
     bottom: 115px;
     left: 5px;
     width: 180px;
@@ -89,22 +74,7 @@ $medium-breakpoint: 500px;
     }
   }
 
-  .r-img-6 {
-    position: absolute;
-    top: 210px;
-    right: 10px;
-    width: 65px;
-    height: 60px;
-
-    @media only screen and (max-width: $medium-breakpoint) {
-      top: 75px;
-      right: 5px;
-      width: 65px;
-      height: 55px;
-    }
-  }
-
-  .r-img-7 {
+  .r-img-5 {
     position: absolute;
     bottom: 78px;
     right: 50px;
@@ -119,7 +89,7 @@ $medium-breakpoint: 500px;
     }
   }
 
-  .r-img-8 {
+  .r-img-6 {
     position: absolute;
     bottom: 115px;
     right: 145px;
@@ -131,21 +101,6 @@ $medium-breakpoint: 500px;
       right: 65px;
       width: 215px;
       height: 50px;
-    }
-  }
-
-  .r-img-9 {
-    position: absolute;
-    top: 150px;
-    right: 90px;
-    width: 75px;
-    height: 70px;
-
-    @media only screen and (max-width: $medium-breakpoint) {
-      top: 100px;
-      right: 75px;
-      width: 45px;
-      height: 45px;
     }
   }
 }

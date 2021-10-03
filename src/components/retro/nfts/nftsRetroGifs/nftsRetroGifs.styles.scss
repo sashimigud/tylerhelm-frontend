@@ -1,0 +1,108 @@
+$breaking-point: 700px;
+
+.nfts-retro-gifs-container {
+  .nfts-retro-gif {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 5;
+  }
+  .nrg-img-1 {
+    top: 141px;
+    left: 160px;
+    width: 170px;
+    height: 70px;
+
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+
+    @media only screen and (max-width: $breaking-point) {
+      left: 45px;
+    }
+  }
+
+  .nrg-img-2 {
+    width: 90px;
+    height: 80px;
+    bottom: 20px;
+    right: 115px;
+    @media only screen and (max-width: $breaking-point) {
+      right: 5px;
+    }
+  }
+
+  .nrg-img-3 {
+    bottom: 90px;
+    left: 130px;
+    width: 100px;
+    height: 70px;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+
+    @media only screen and (max-width: $breaking-point) {
+      bottom: 4px;
+    }
+  }
+
+  .nrg-img-4 {
+    top: 250px;
+    right: 115px;
+    width: 160px;
+    height: 60px;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+
+    @media only screen and (max-width: $breaking-point) {
+      right: 0px;
+      top: 153px;
+    }
+  }
+
+  .nrg-img-5 {
+    bottom: 230px;
+    right: 65px;
+    width: 100px;
+    height: 100px;
+
+    @media only screen and (max-width: $breaking-point) {
+      bottom: 230px;
+      right: 10px;
+      width: 50px;
+      height: 70px;
+    }
+  }
+
+  .nrg-img-6 {
+    top: 280px;
+    left: 65px;
+    width: 60px;
+    height: 40px;
+
+    @media only screen and (max-width: $breaking-point) {
+      top: 225px;
+      left: 20px;
+      width: 35px;
+      height: 25px;
+    }
+  }
+
+  .nrg-img-7 {
+    bottom: 315px;
+    left: 145px;
+    width: 60px;
+    height: 70px;
+
+    @media only screen and (max-width: $breaking-point) {
+      bottom: 315px;
+      right: 35px;
+      left: auto;
+      width: 45px;
+      height: 50px;
+    }
+  }
+}

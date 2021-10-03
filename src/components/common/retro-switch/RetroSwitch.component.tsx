@@ -13,14 +13,16 @@ const RetroSwitch: FC = () => {
   useEffect(() => {
     if (
       state.isRetroMode === null &&
-      (location.pathname === '/boring' || location.pathname === '/boring/')
+      (location.pathname.includes('/boring') ||
+        location.pathname.includes('/boring/'))
     ) {
       dispatch({ type: 'setBoring' });
     }
 
     if (
       state.isRetroMode === null &&
-      (location.pathname === '/retro' || location.pathname === '/retro/')
+      (location.pathname.includes('/retro') ||
+        location.pathname.includes('/retro/'))
     ) {
       dispatch({ type: 'setRetro' });
     }
@@ -30,10 +32,10 @@ const RetroSwitch: FC = () => {
   function toggleRetro() {
     dispatch({ type: 'toggleRetro' });
 
-    if (location.pathname === '/boring') {
-      history.push('retro');
-    } else if (location.pathname === '/retro') {
-      history.push('boring');
+    if (location.pathname.includes('/boring')) {
+      history.push('/retro');
+    } else if (location.pathname.includes('/retro')) {
+      history.push('/boring');
     }
   }
 

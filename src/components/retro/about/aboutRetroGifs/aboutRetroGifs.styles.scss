@@ -1,0 +1,51 @@
+$breaking-point: 700px;
+
+.about-retro-gifs-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .about-retro-gif {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 5;
+  }
+
+  .arg-img-1 {
+    top: -15px;
+    left: 0;
+    width: 80px;
+    height: 45px;
+
+    @media only screen and (min-width: $breaking-point) {
+      left: -40px;
+    }
+  }
+
+  .arg-img-2 {
+    top: 40px;
+    left: -25px;
+    width: 60px;
+    height: 40px;
+
+    @media only screen and (min-width: $breaking-point) {
+      left: -35px;
+    }
+  }
+
+  .arg-img-3 {
+    width: 200px;
+    height: 150px;
+    top: 0px;
+    right: 0px;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+
+    @media only screen and (min-width: $breaking-point) {
+      right: -45px;
+    }
+  }
+}

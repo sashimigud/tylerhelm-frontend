@@ -1,6 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
 import './about.styles.scss';
 
+import AboutRetroGifs from './aboutRetroGifs/AboutRetroGifs.component';
+
 const About: FC = () => {
   const [isEmailShown, setIsEmailShown] = useState<boolean>(false);
   const [showCopied, setShowCopied] = useState<boolean>(false);
@@ -35,21 +37,22 @@ const About: FC = () => {
 
   return (
     <div className="about-container">
+      <AboutRetroGifs />
       <div className="about-content-container">
         <div className="about-text-container">
           <h1>Hello world.</h1>
           Welcome to my corner of the internet. <br />
           <br /> Consider this an homage to a time before every inch of the
-          internet was analyzed and commercialized to hell. <br />
+          internet was analysed and commercialized to hell. <br />
           <br /> If you should want the more sanitized and normal experience
-          there is a retro-switch in the right hand corner, press it and you'll
+          there is a retro-switch in the right-hand corner, press it and you'll
           be sent to the boring version of this site. <br />
           <br />
           This site is a way of combining things I am passionate about. Namely
           software development, art and blockchain. <br />
           <br />
           For any inquires, tips for improvements, or if you simply want to tell
-          me to go fuck my self, send me an email at: <br />
+          me to go fuck myself, send me an email at: <br />
           {isEmailShown ? (
             <div className="email-container">
               <p className="email" onClick={() => copyEmailToClipboard(email)}>
@@ -71,7 +74,8 @@ const About: FC = () => {
         </div>
         <div className="about-gif-container">
           <h3>- Tyler Helm</h3>
-          <img src="/assets/vaporwave_comp.gif" alt="" />
+          <img className="img-bath" src="/assets/bath-anime.png" alt="" />
+          <img className="img-comp" src="/assets/vaporwave_comp.gif" alt="" />
         </div>
       </div>
     </div>

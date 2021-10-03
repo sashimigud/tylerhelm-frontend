@@ -3,8 +3,9 @@ $small-breakpoint: 390px;
 .about-container {
   width: 100%;
   max-width: 600px;
-  background-color: #e3dbe1;
+  background-color: rgba(227, 219, 225, 0.8);
   margin: 45px 10px;
+  margin-bottom: 70px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -17,6 +18,7 @@ $small-breakpoint: 390px;
 
   .about-content-container {
     width: 100%;
+    z-index: 10;
 
     .about-text-container {
       margin-top: 30px;
@@ -73,10 +75,23 @@ $small-breakpoint: 390px;
       font-family: 'Special Elite', cursive;
       display: flex;
       justify-content: space-between;
+      position: relative;
 
-      img {
+      .img-comp {
         width: 200px;
         height: 200px;
+        z-index: 20;
+      }
+
+      .img-bath {
+        width: 300px;
+        height: 150px;
+        box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
+        border-radius: 4px;
+        position: absolute;
+        top: 100px;
       }
     }
   }

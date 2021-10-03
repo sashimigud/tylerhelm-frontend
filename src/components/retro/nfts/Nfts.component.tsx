@@ -1,16 +1,146 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
+import { CRYPTO_HEADERS } from '../../../_constants/cryptoHeaders';
 import './nfts.styles.scss';
 
+import NftsRetroGifs from './nftsRetroGifs/NftsRetroGifs.component';
+
 const Nfts: FC = () => {
+  const [activeCryptoHeader, setActiveCryptoHeader] =
+    useState<CRYPTO_HEADERS | null>(null);
+
+  function setActiveHeader(cryptoHeader: CRYPTO_HEADERS) {
+    if (cryptoHeader === activeCryptoHeader) {
+      setActiveCryptoHeader(null);
+    } else {
+      setActiveCryptoHeader(cryptoHeader);
+    }
+  }
+
   return (
-    <div className="nfts-container">
-      <h2>Chains:</h2>
-      <h3>Etherium</h3>
-      <h3>Algorand</h3>
-      <h3>Polygon/Matic</h3>
-      <h3>Tezos</h3>
-      <h3>Harmoney One</h3>
-    </div>
+    <>
+      <NftsRetroGifs />
+      <div className="nfts-container">
+        <h2>Chains:</h2>
+        <div className="crypto-instance">
+          <div
+            className={
+              'crypto-header ' +
+              (activeCryptoHeader === CRYPTO_HEADERS.ETH ? 'active-header' : '')
+            }
+            onClick={() => setActiveHeader(CRYPTO_HEADERS.ETH)}>
+            <div className="crypto-logo etherium"></div>
+            <h3>Etherium</h3>
+          </div>
+          {activeCryptoHeader === CRYPTO_HEADERS.ETH && (
+            <div className="crypto-links-container">
+              <ul>
+                <li>
+                  <a
+                    href="https://rarible.com/tylerhelm"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Rarible
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://opensea.io/tylerhelm"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    OpenSea
+                  </a>
+                  (none listed)
+                </li>
+              </ul>
+            </div>
+          )}
+        </div>
+        <div className="crypto-instance">
+          <div
+            className={
+              'crypto-header ' +
+              (activeCryptoHeader === CRYPTO_HEADERS.ALGO
+                ? 'active-header'
+                : '')
+            }
+            onClick={() => setActiveHeader(CRYPTO_HEADERS.ALGO)}>
+            <div className="crypto-logo algo"></div>
+            <h3>Algorand</h3>
+          </div>
+          {activeCryptoHeader === CRYPTO_HEADERS.ALGO && (
+            <div className="crypto-links-container">
+              <ul>
+                <li>
+                  <a
+                    href="https://ab2.gallery/address/MYOVACPA5DZFAJIZH3IQV6GNRH7DSJBV7KYDDODPZHKH7L4VB756T6KI6A"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    AB2 Gallery
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.algogems.io/gallery/tylerhelm"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Algogems
+                  </a>
+                  (sporadic auctions)
+                </li>
+              </ul>
+            </div>
+          )}
+        </div>
+        <div className="crypto-instance">
+          <div
+            className={
+              'crypto-header ' +
+              (activeCryptoHeader === CRYPTO_HEADERS.MATIC
+                ? 'active-header'
+                : '')
+            }
+            onClick={() => setActiveHeader(CRYPTO_HEADERS.MATIC)}>
+            <div className="crypto-logo polygon"></div>
+            <h3>Polygon/Matic</h3>
+          </div>
+          {activeCryptoHeader === CRYPTO_HEADERS.MATIC && (
+            <div className="crypto-links-container">Polygon links</div>
+          )}
+        </div>
+        <div className="crypto-instance">
+          <div
+            className={
+              'crypto-header ' +
+              (activeCryptoHeader === CRYPTO_HEADERS.TEZOS
+                ? 'active-header'
+                : '')
+            }
+            onClick={() => setActiveHeader(CRYPTO_HEADERS.TEZOS)}>
+            <div className="crypto-logo tezos"></div>
+            <h3>Tezos</h3>
+          </div>
+          {activeCryptoHeader === CRYPTO_HEADERS.TEZOS && (
+            <div className="crypto-links-container">Tezos links</div>
+          )}
+        </div>
+        <div className="crypto-instance">
+          <div
+            className={
+              'crypto-header ' +
+              (activeCryptoHeader === CRYPTO_HEADERS.HARMONY
+                ? 'active-header'
+                : '')
+            }
+            onClick={() => setActiveHeader(CRYPTO_HEADERS.HARMONY)}>
+            <div className="crypto-logo harmoney"></div>
+            <h3>Harmoney One</h3>
+          </div>
+          {activeCryptoHeader === CRYPTO_HEADERS.HARMONY && (
+            <div className="crypto-links-container">Harmony links</div>
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 

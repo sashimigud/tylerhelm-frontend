@@ -1,3 +1,5 @@
+$small-breakpoint: 328px;
+
 .nfts-container {
   width: 100%;
   max-width: 600px;
@@ -12,4 +14,72 @@
   -webkit-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.75);
   border-radius: 4px;
+
+  h2 {
+    margin: 0;
+  }
+
+  .crypto-header {
+    display: flex;
+    align-items: center;
+    min-width: 280px;
+    cursor: pointer;
+
+    @media only screen and (max-width: $small-breakpoint) {
+      min-width: 200px;
+    }
+
+    &:hover {
+      color: yellow;
+      text-shadow: 2px 2px red;
+    }
+
+    h3 {
+      margin: 10px 0;
+    }
+
+    .crypto-logo {
+      width: 15px;
+      height: 15px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: 5px;
+    }
+
+    .etherium {
+      background-image: url('./cryptoLogos/etherium.png');
+    }
+
+    .algo {
+      background-image: url('./cryptoLogos/algorand.png');
+    }
+
+    .polygon {
+      background-image: url('./cryptoLogos/polygon.png');
+    }
+
+    .tezos {
+      background-image: url('./cryptoLogos/tezos.png');
+    }
+
+    .harmoney {
+      background-image: url('./cryptoLogos/harmony.png');
+    }
+  }
+
+  .active-header {
+    color: red;
+    text-shadow: 2px 2px yellow;
+  }
+
+  .crypto-links-container {
+    ul {
+      margin: 0;
+
+      li {
+        margin: 5px 0;
+      }
+    }
+  }
 }
