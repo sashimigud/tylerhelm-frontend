@@ -1,0 +1,17 @@
+.boring-btn {
+  height: 30px;
+  width: 50px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid black;
+  }
+}

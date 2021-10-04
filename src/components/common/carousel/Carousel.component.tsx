@@ -6,11 +6,14 @@ import Controls from '../controls/Controls.component';
 import CarouselItem from './carousel-item/CarouselItem.component';
 import CarouselThumb from './carousel-thumb/CarouselThumb.component';
 
+import { useStore } from '../../../utils/globalStore';
+
 interface ICarouselProps {
   isRedTape?: boolean;
 }
 
 const Carousel: FC<ICarouselProps> = ({ isRedTape }: ICarouselProps) => {
+  const { state } = useStore();
   const images = [
     {
       src: 'test-images/pagliacci-test.jpg',
@@ -130,7 +133,12 @@ const Carousel: FC<ICarouselProps> = ({ isRedTape }: ICarouselProps) => {
 
   return (
     <div className="carousel-container">
-      <p className={'image-title ' + (isRedTape ? 'redtape-title' : '')}>
+      <p
+        className={
+          'image-title ' +
+          (isRedTape ? 'redtape-title ' : '') +
+          (state.isRetroMode ? 'retro-title ' : '')
+        }>
         {title}
       </p>
       <div

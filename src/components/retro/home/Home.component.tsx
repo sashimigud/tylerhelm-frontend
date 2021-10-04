@@ -11,7 +11,7 @@ import Header from '../header/Header.component';
 import Content from '../home/content/Content.component';
 import RetroSwitch from '../../common/retro-switch/RetroSwitch.component';
 import About from '../../retro/about/About.component';
-import Nfts from '../../retro/nfts/Nfts.component';
+import RetroNfts from '../retroNfts/RetroNft.component';
 import RedTape from '../../common/red-tape/RedTape.component';
 
 const Home: FC = () => {
@@ -65,7 +65,7 @@ const Home: FC = () => {
               <About />
             </Route>
             <Route exact path={`${path}/${HEADER_NAV.NFTS}`}>
-              <Nfts />
+              <RetroNfts />
             </Route>
             <Route exact path={`${path}/${HEADER_NAV.REDTAPE}`}>
               <RedTape />

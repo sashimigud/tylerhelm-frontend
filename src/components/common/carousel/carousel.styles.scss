@@ -1,19 +1,22 @@
 $medium-breakpoint: 500px;
 
 .carousel-container {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 65px;
+  padding-bottom: 30px;
   max-width: 560px;
-  margin: auto;
+  margin: 0 auto;
 
   .image-title {
     position: relative;
     text-align: center;
     font-size: 30px;
     margin: 0 0 10px;
+    z-index: 100;
+  }
+
+  .retro-title {
     background-color: aqua;
     background-color: rgba(0, 255, 255, 0.8);
-    z-index: 100;
   }
 
   .redtape-title {

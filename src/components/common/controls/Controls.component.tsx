@@ -1,8 +1,10 @@
 import React, { ReactElement } from 'react';
 import './controls.styles.scss';
-import { BUTTON_DIRECTIONS } from '../../../_constants/buttonSettings';
-import ImgBtn from '../carousel/img-carousel-btns/ImgBtn.component';
 import { useStore } from '../../../utils/globalStore';
+import { BUTTON_DIRECTIONS } from '../../../_constants/buttonSettings';
+
+import ImgBtn from '../carousel/img-carousel-btns/ImgBtn.component';
+import BoringCarouselBtn from '../carousel/boring-carousel-btns/BoringCarouselBtn.component';
 
 interface ControlsProps {
   slideToPrevItem: () => void;
@@ -54,8 +56,14 @@ const Controls = ({
 
     return (
       <div className="controls-container">
-        <button onClick={slideToPrevItem}>previous</button>
-        <button onClick={slideToNextItem}>next</button>
+        <BoringCarouselBtn
+          onClick={slideToPrevItem}
+          direction={BUTTON_DIRECTIONS.PREVIOUS}
+        />
+        <BoringCarouselBtn
+          onClick={slideToNextItem}
+          direction={BUTTON_DIRECTIONS.NEXT}
+        />
       </div>
     );
   }

@@ -1,9 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
-import './about.styles.scss';
+import './boringAbout.styles.scss';
 
-import AboutRetroGifs from './aboutRetroGifs/AboutRetroGifs.component';
-
-const About: FC = () => {
+const BoringAbout: FC = () => {
   const [isEmailShown, setIsEmailShown] = useState<boolean>(false);
   const [showCopied, setShowCopied] = useState<boolean>(false);
 
@@ -34,10 +32,8 @@ const About: FC = () => {
       setShowCopied(true);
     } else return;
   }
-
   return (
-    <div className="about-container">
-      <AboutRetroGifs />
+    <div className="boring-about-container">
       <div className="about-content-container">
         <div className="about-text-container">
           <h1>Hello world.</h1>
@@ -46,21 +42,14 @@ const About: FC = () => {
           internet was analysed and commercialized to the extent seen today.
           <br />
           <br />
-          Forget likes or brand deals, people made shit because they enjoyed it.
-          Did most of it suck? Absolutely. is it stupid to have a 20mb
-          bundle-size of unnecessary gifs? you bet. Sometimes you just want to
-          say to hell with SEO, fuck design principles, optimization? - who
-          needs it? Look at this stupid shit I made! <br /> - and that's ok.
-          <br />
-          <br /> If you should want the more sanitized and normal experience
-          there is a retro-switch in the right-hand corner, press it and you'll
-          be sent to the boring version of this site. <br />
-          <br />
-          This site is a way of combining things I am passionate about. Namely
-          software development, art and blockchain. <br />
+          I am (at the time of writing) a front-end developer from Norway, who
+          also enjoys drawing and painting, mostly digitally. This site is a way
+          of combining things I am passionate about. Namely software
+          development, art and (some) blockchain. <br />
           <br />
           For any inquires, tips for improvements, or if you simply want to tell
-          me to go fuck myself, send me an email at: <br />
+          me I remind you of Tony's cousin's brother, send me an email at:{' '}
+          <br />
           {isEmailShown ? (
             <div className="email-container">
               <p className="email" onClick={() => copyEmailToClipboard(email)}>
@@ -80,14 +69,12 @@ const About: FC = () => {
             </>
           )}
         </div>
-        <div className="about-gif-container">
+        <div className="signed-container">
           <h3>- Tyler Helm</h3>
-          <img className="img-bath" src="/assets/bath-anime.png" alt="" />
-          <img className="img-comp" src="/assets/vaporwave_comp.gif" alt="" />
         </div>
       </div>
     </div>
   );
 };
 
-export default About;
+export default BoringAbout;
