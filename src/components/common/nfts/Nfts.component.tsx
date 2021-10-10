@@ -96,7 +96,18 @@ const Nfts: FC = () => {
           <h3>Polygon/Matic</h3>
         </div>
         {activeCryptoHeader === CRYPTO_HEADERS.MATIC && (
-          <div className="crypto-links-container">Polygon links</div>
+          <div className="crypto-links-container">
+            <ul>
+              <li>
+                <a
+                  href="https://opensea.io/tylerhelm"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  opensea (matic)
+                </a>
+              </li>
+            </ul>
+          </div>
         )}
       </div>
       <div className="crypto-instance">
@@ -110,7 +121,35 @@ const Nfts: FC = () => {
           <h3>Tezos</h3>
         </div>
         {activeCryptoHeader === CRYPTO_HEADERS.TEZOS && (
-          <div className="crypto-links-container">Tezos links</div>
+          <div className="crypto-links-container">
+            <ul>
+              <li>
+                <a
+                  href="https://www.hicetnunc.xyz/tylerhelm"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  hic et nunc
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://byteblock.art/collections/KT1CKycpL2MFX98kcisgrruYUvYqwQg3cmJx"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Byteblock collection
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://objkt.com/profile/tz1W331jqP7ahn938oAcokknRUZiQhwtXQWM/creations"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  objkt.com
+                </a>
+              </li>
+              <li>Kalamint when?</li>
+            </ul>
+          </div>
         )}
       </div>
       <div className="crypto-instance">
@@ -126,7 +165,18 @@ const Nfts: FC = () => {
           <h3>Harmoney One</h3>
         </div>
         {activeCryptoHeader === CRYPTO_HEADERS.HARMONY && (
-          <div className="crypto-links-container">Harmony links</div>
+          <div className="crypto-links-container">
+            <ul>
+              <li>
+                <a
+                  href="https://davinci.gallery/profile/TylerHelm"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Davinci.Gallery
+                </a>
+              </li>
+            </ul>
+          </div>
         )}
       </div>
     </div>

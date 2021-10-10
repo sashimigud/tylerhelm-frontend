@@ -60,7 +60,14 @@ const About: FC = () => {
           software development, art and blockchain. <br />
           <br />
           For any inquires, tips for improvements, or if you simply want to tell
-          me to go fuck myself, send me an email at: <br />
+          me to go fuck myself, DM me{' '}
+          <a
+            href="http://www.twitter.com/WhosTylerHelm"
+            target="_blank"
+            rel="noopener noreferrer">
+            @WhosTylerHelm
+          </a>{' '}
+          or send me an email at: <br />
           {isEmailShown ? (
             <div className="email-container">
               <p className="email" onClick={() => copyEmailToClipboard(email)}>

@@ -48,7 +48,7 @@ const BoringAbout: FC = () => {
           development, art and (some) blockchain. <br />
           <br />
           For any inquires, tips for improvements, or if you simply want to tell
-          me I remind you of Tony's cousin's brother, send me an email at:{' '}
+          me that I remind you of Tony's cousin's brother, send me an email at:{' '}
           <br />
           {isEmailShown ? (
             <div className="email-container">

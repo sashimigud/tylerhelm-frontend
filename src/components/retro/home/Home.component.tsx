@@ -52,7 +52,9 @@ const Home: FC = () => {
         <div
           className="cooltext ct-nfts"
           onClick={() => history.push(`/retro/${HEADER_NAV.NFTS}`)}></div>
-        <div className="cooltext ct-redtape"></div>
+        <div
+          className="cooltext ct-redtape"
+          onClick={() => alert("There's nothing here")}></div>
         <div
           className="gif-girls"
           onClick={() => history.push(`/retro/${HEADER_NAV.REDTAPE}`)}></div>
