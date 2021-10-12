@@ -1,0 +1,30 @@
+.copy-to-clipboard-container {
+  position: relative;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  .copy-text {
+    margin: 5px;
+    background-color: #c5c5c5;
+    display: inline-block;
+  }
+
+  .copiedChip {
+    position: absolute;
+    top: -2px;
+    right: -25px;
+    background-color: rgb(255, 109, 109);
+    margin-left: 5px;
+    border-radius: 2px;
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

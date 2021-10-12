@@ -2,9 +2,18 @@ import React, { FC, useState } from 'react';
 import { CRYPTO_HEADERS } from '../../../_constants/cryptoHeaders';
 import './nfts.styles.scss';
 
+import CopyToClipboard from '../utils/CopyToClipBoard.component';
+
 const Nfts: FC = () => {
   const [activeCryptoHeader, setActiveCryptoHeader] =
     useState<CRYPTO_HEADERS | null>(null);
+
+  const ethAddress = '0xF0226F5EF9d1B7b18D0D5F1034f3958446E25431';
+  const algoAddress =
+    'MYOVACPA5DZFAJIZH3IQV6GNRH7DSJBV7KYDDODPZHKH7L4VB756T6KI6A';
+  const tezosAddress = 'tz1W331jqP7ahn938oAcokknRUZiQhwtXQWM';
+  const maticAddress = '0xF0226F5EF9d1B7b18D0D5F1034f3958446E25431';
+  const harmonyAddress = 'one17q3x7hhe6xmmrrgdtugrfuu4s3rwy4p394w5lp';
 
   function setActiveHeader(cryptoHeader: CRYPTO_HEADERS) {
     if (cryptoHeader === activeCryptoHeader) {
@@ -29,6 +38,7 @@ const Nfts: FC = () => {
         </div>
         {activeCryptoHeader === CRYPTO_HEADERS.ETH && (
           <div className="crypto-links-container">
+            <CopyToClipboard textToCopy={ethAddress} isWalletAddress={true} />
             <ul>
               <li>
                 <a
@@ -63,6 +73,7 @@ const Nfts: FC = () => {
         </div>
         {activeCryptoHeader === CRYPTO_HEADERS.ALGO && (
           <div className="crypto-links-container">
+            <CopyToClipboard textToCopy={algoAddress} isWalletAddress={true} />
             <ul>
               <li>
                 <a
@@ -97,6 +108,7 @@ const Nfts: FC = () => {
         </div>
         {activeCryptoHeader === CRYPTO_HEADERS.MATIC && (
           <div className="crypto-links-container">
+            <CopyToClipboard textToCopy={maticAddress} isWalletAddress={true} />
             <ul>
               <li>
                 <a
@@ -122,7 +134,16 @@ const Nfts: FC = () => {
         </div>
         {activeCryptoHeader === CRYPTO_HEADERS.TEZOS && (
           <div className="crypto-links-container">
+            <CopyToClipboard textToCopy={tezosAddress} isWalletAddress={true} />
             <ul>
+              <li>
+                <a
+                  href="https://kalamint.io/user/tylerhelm"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Kalamint (!)
+                </a>
+              </li>
               <li>
                 <a
                   href="https://www.hicetnunc.xyz/tylerhelm"
@@ -147,7 +168,6 @@ const Nfts: FC = () => {
                   objkt.com
                 </a>
               </li>
-              <li>Kalamint when?</li>
             </ul>
           </div>
         )}
@@ -166,6 +186,10 @@ const Nfts: FC = () => {
         </div>
         {activeCryptoHeader === CRYPTO_HEADERS.HARMONY && (
           <div className="crypto-links-container">
+            <CopyToClipboard
+              textToCopy={harmonyAddress}
+              isWalletAddress={true}
+            />
             <ul>
               <li>
                 <a

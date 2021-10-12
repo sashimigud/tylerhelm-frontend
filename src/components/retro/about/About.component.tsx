@@ -1,39 +1,12 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import './about.styles.scss';
 
 import AboutRetroGifs from './aboutRetroGifs/AboutRetroGifs.component';
+import CopyToClipboard from '../../common/utils/CopyToClipBoard.component';
 
 const About: FC = () => {
   const [isEmailShown, setIsEmailShown] = useState<boolean>(false);
-  const [showCopied, setShowCopied] = useState<boolean>(false);
-
   const email = 'tylerhelm.arthub@gmail.com';
-  let timer: null | ReturnType<typeof setTimeout> = null;
-
-  useEffect(() => {
-    if (showCopied) {
-      setTimer(600);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showCopied]);
-
-  function setTimer(delay) {
-    if (timer !== null) {
-      clearTimeout(timer);
-    }
-
-    timer = setTimeout(() => {
-      setShowCopied(false);
-      timer = null;
-    }, delay);
-  }
-
-  function copyEmailToClipboard(email: string): void {
-    if (window.isSecureContext) {
-      navigator.clipboard.writeText(email);
-      setShowCopied(true);
-    } else return;
-  }
 
   return (
     <div className="about-container">
@@ -69,12 +42,7 @@ const About: FC = () => {
           </a>{' '}
           or send me an email at: <br />
           {isEmailShown ? (
-            <div className="email-container">
-              <p className="email" onClick={() => copyEmailToClipboard(email)}>
-                {email}
-              </p>
-              {showCopied && <span className="copiedChip">Copied!</span>}
-            </div>
+            <CopyToClipboard textToCopy={email} />
           ) : (
             <p
               className="email-block"
