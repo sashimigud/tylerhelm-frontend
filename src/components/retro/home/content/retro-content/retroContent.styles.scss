@@ -61,14 +61,14 @@ $medium-breakpoint: 500px;
 
   .r-img-4 {
     position: absolute;
-    bottom: 115px;
-    left: 5px;
+    top: 190px;
+    right: 55px;
     width: 180px;
     height: 145px;
 
     @media only screen and (max-width: $medium-breakpoint) {
       bottom: 90px;
-      left: 5px;
+      right: 5px;
       width: 100px;
       height: 80px;
     }

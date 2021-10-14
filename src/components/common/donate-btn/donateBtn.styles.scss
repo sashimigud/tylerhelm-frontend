@@ -1,0 +1,63 @@
+$donate-container-left: -20px;
+$donate-container-bottom: -50px;
+
+.donate-btn-container {
+  position: fixed;
+  bottom: $donate-container-bottom;
+  left: $donate-container-left;
+  width: 200px;
+  height: 285px;
+  z-index: 5000;
+  pointer-events: none;
+
+  @media only screen and (min-width: 700px) {
+    bottom: -35px;
+    left: -10px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .hitbox {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 70px;
+    left: 47px;
+    pointer-events: all;
+    cursor: pointer;
+  }
+
+  .show-addresses {
+    position: absolute;
+    width: 150px;
+    min-height: 160px;
+    bottom: 90px;
+    left: 125px;
+    border-radius: 4px;
+    background-color: rgba(255, 240, 240, 0.8);
+    pointer-events: all;
+    padding: 10px;
+    box-shadow: 0px 5px 20px -9px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 20px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 20px -9px rgba(0, 0, 0, 0.75);
+    font-size: 12px;
+
+    .click-tooltip {
+      margin: 0;
+      margin-bottom: 5px;
+      color: blue;
+    }
+
+    .chain-container {
+      span {
+        font-size: 11px;
+        font-weight: bold;
+      }
+      padding-bottom: 5px;
+    }
+  }
+}

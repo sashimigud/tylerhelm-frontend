@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 import { CRYPTO_HEADERS } from '../../../_constants/cryptoHeaders';
+import { WALLET_ADDRESS } from '../../../_constants/walletAddresses';
 import './nfts.styles.scss';
 
 import CopyToClipboard from '../utils/CopyToClipBoard.component';
@@ -7,13 +8,6 @@ import CopyToClipboard from '../utils/CopyToClipBoard.component';
 const Nfts: FC = () => {
   const [activeCryptoHeader, setActiveCryptoHeader] =
     useState<CRYPTO_HEADERS | null>(null);
-
-  const ethAddress = '0xF0226F5EF9d1B7b18D0D5F1034f3958446E25431';
-  const algoAddress =
-    'MYOVACPA5DZFAJIZH3IQV6GNRH7DSJBV7KYDDODPZHKH7L4VB756T6KI6A';
-  const tezosAddress = 'tz1W331jqP7ahn938oAcokknRUZiQhwtXQWM';
-  const maticAddress = '0xF0226F5EF9d1B7b18D0D5F1034f3958446E25431';
-  const harmonyAddress = 'one17q3x7hhe6xmmrrgdtugrfuu4s3rwy4p394w5lp';
 
   function setActiveHeader(cryptoHeader: CRYPTO_HEADERS) {
     if (cryptoHeader === activeCryptoHeader) {
@@ -38,7 +32,10 @@ const Nfts: FC = () => {
         </div>
         {activeCryptoHeader === CRYPTO_HEADERS.ETH && (
           <div className="crypto-links-container">
-            <CopyToClipboard textToCopy={ethAddress} isWalletAddress={true} />
+            <CopyToClipboard
+              textToCopy={WALLET_ADDRESS.ETH}
+              isWalletAddress={true}
+            />
             <ul>
               <li>
                 <a
@@ -73,7 +70,10 @@ const Nfts: FC = () => {
         </div>
         {activeCryptoHeader === CRYPTO_HEADERS.ALGO && (
           <div className="crypto-links-container">
-            <CopyToClipboard textToCopy={algoAddress} isWalletAddress={true} />
+            <CopyToClipboard
+              textToCopy={WALLET_ADDRESS.ALGO}
+              isWalletAddress={true}
+            />
             <ul>
               <li>
                 <a
@@ -108,7 +108,10 @@ const Nfts: FC = () => {
         </div>
         {activeCryptoHeader === CRYPTO_HEADERS.MATIC && (
           <div className="crypto-links-container">
-            <CopyToClipboard textToCopy={maticAddress} isWalletAddress={true} />
+            <CopyToClipboard
+              textToCopy={WALLET_ADDRESS.MATIC}
+              isWalletAddress={true}
+            />
             <ul>
               <li>
                 <a
@@ -134,7 +137,10 @@ const Nfts: FC = () => {
         </div>
         {activeCryptoHeader === CRYPTO_HEADERS.TEZOS && (
           <div className="crypto-links-container">
-            <CopyToClipboard textToCopy={tezosAddress} isWalletAddress={true} />
+            <CopyToClipboard
+              textToCopy={WALLET_ADDRESS.TEZOS}
+              isWalletAddress={true}
+            />
             <ul>
               <li>
                 <a
@@ -187,7 +193,7 @@ const Nfts: FC = () => {
         {activeCryptoHeader === CRYPTO_HEADERS.HARMONY && (
           <div className="crypto-links-container">
             <CopyToClipboard
-              textToCopy={harmonyAddress}
+              textToCopy={WALLET_ADDRESS.HARMONY}
               isWalletAddress={true}
             />
             <ul>

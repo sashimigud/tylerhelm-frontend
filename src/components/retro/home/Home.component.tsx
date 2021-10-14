@@ -13,6 +13,7 @@ import RetroSwitch from '../../common/retro-switch/RetroSwitch.component';
 import About from '../../retro/about/About.component';
 import RetroNfts from '../retroNfts/RetroNft.component';
 import RedTape from '../../common/red-tape/RedTape.component';
+import DonateBtb from '../../common/donate-btn/DonateBtn.component';
 
 const Home: FC = () => {
   const { state, dispatch } = useStore();
@@ -36,6 +37,7 @@ const Home: FC = () => {
   return (
     <div id="home-container">
       <RetroSwitch />
+      <DonateBtb />
       <Menu
         customBurgerIcon={false}
         isOpen={state.isFlyoutOpen}
